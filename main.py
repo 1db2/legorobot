@@ -55,6 +55,9 @@ def RandomCircle():
     rCircle = Circle(rX, rY, rR, False)
 
     return rCircle
+  
+def Distance(c1,c2):
+  return math.sqrt( ((c2.x+c1.x)**2) + ((c2.y+c1.y)**2) )
 
 
 while ingame:

@@ -41,8 +41,7 @@ while answer != szam:
         ev3.screen.print("Nagyobb")
     elif answer > szam:
         ev3.screen.print("Kisebb")
-    ev3.screen.draw_text(ev3.screen.width/2,
-                         ev3.screen.height/2, guess, Color.BLACK)
+    ev3.screen.draw_text(ev3.screen.width/2, ev3.screen.height/2, guess, Color.BLACK)
 
     button = wait_for_button(ev3)
 

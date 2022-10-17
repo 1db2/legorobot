@@ -41,7 +41,8 @@ while answer != szam:
         ev3.screen.print("Nagyobb")
     elif answer > szam:
         ev3.screen.print("Kisebb")
-    ev3.screen.draw_text(ev3.screen.width/2, ev3.screen.height/2, guess, Color.BLACK)
+    ev3.screen.draw_text(ev3.screen.width/2,
+                         ev3.screen.height/2, guess, Color.BLACK)
 
     button = wait_for_button(ev3)
 
@@ -52,6 +53,7 @@ while answer != szam:
     elif button == Button.CENTER:
         answer = guess
         currentGuess = currentGuess + 1
+        ev3.speaker.play_file(SoundFile.CLICK)
 
     if currentGuess == maxGuesses:
         break
@@ -60,7 +62,9 @@ while answer != szam:
 ev3.screen.clear()
 if currentGuess == maxGuesses:
     ev3.screen.print("Kifogytal a \nprobalkozasokbol!")
+    ev3.speaker.play_file(SoundFile.GENREAL_ALERT)
 else:
     ev3.screen.print("Gratulalok,\nkitalaltad!\n" + str(szam))
+    ev3.speaker.play_file(SoundFile.CONFIRM)
 
 wait_for_button(ev3)

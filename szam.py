@@ -62,7 +62,7 @@ while answer != szam:
 ev3.screen.clear()
 if currentGuess == maxGuesses:
     ev3.screen.print("Kifogytal a \nprobalkozasokbol!")
-    ev3.speaker.play_file(SoundFile.GENREAL_ALERT)
+    ev3.speaker.play_file(SoundFile.GENERAL_ALERT)
 else:
     ev3.screen.print("Gratulalok,\nkitalaltad!\n" + str(szam))
     ev3.speaker.play_file(SoundFile.CONFIRM)
